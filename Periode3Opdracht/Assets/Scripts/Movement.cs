@@ -22,13 +22,15 @@ public class Movement : MonoBehaviour
         float hor = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
 
+
         transform.position += transform.forward * vert * speed * Time.deltaTime; /// move the players character foward so it moves the same way the player is facing
         transform.position += transform.right * hor * speed * Time.deltaTime;
 
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Vertical") > 0) 
+        empty.transform.position = new Vector3(transform.position.x, transform.position.y + 1.49f, transform.position.z);
+
+        if (hor > 0 || vert > 0)
         {
-            print("If ran");
-            transform.eulerAngles = new Vector3(0,empty.transform.rotation.y,0);
+            transform.eulerAngles = empty.transform.eulerAngles;
         }
 
 
