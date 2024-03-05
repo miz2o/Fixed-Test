@@ -16,13 +16,15 @@ public class Camera : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
+            camRot.y += Input.GetAxis("Mouse X");
             if (camRot.x <= 8 || camRot.x >= 8)
             {
                 camRot.x += -Input.GetAxis("Mouse Y");
+                cam.transform.eulerAngles = (Vector2)camRot * sens;
             }
-            camRot.y += Input.GetAxis("Mouse X");
+
             
-            cam.transform.eulerAngles = (Vector2)camRot * sens; /// Rotate the camera from world space * by camera sensitivity
+           /// Rotate the camera from world space * by camera sensitivity
         }
 
         if (camRot.x > 8)
