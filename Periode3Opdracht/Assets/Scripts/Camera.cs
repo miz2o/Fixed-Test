@@ -33,17 +33,6 @@ public class Camera : MonoBehaviour
                 /// Rotate the camera from world space * by camera sensitivity
             }
 
-            if (camRot.x > 8)
-            {
-                print("above");
-                camRot.x = 8f;
-            }
-            else if (camRot.x < -11)
-            {
-                print("below");
-                camRot.x = -11f;
-
-            }
 
         }
         else
@@ -51,6 +40,17 @@ public class Camera : MonoBehaviour
             camRot.y += Input.GetAxis("Mouse X");
             camRot.x += -Input.GetAxis("Mouse Y");
             cam.transform.eulerAngles = (Vector2)camRot * sens;
+        }
+        if (camRot.x > 8)
+        {
+            print("above");
+            camRot.x = 8f;
+        }
+        else if (camRot.x < -11)
+        {
+            print("below");
+            camRot.x = -11f;
+
         }
     }
 }
