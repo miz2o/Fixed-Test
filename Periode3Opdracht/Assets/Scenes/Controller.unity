@@ -421,6 +421,8 @@ MonoBehaviour:
   cam: {fileID: 37176483}
   camRot: {x: 0, y: 0}
   sens: 5
+  empty: {fileID: 37176483}
+  t: 0.5
 --- !u!54 &306402830
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,26 +9,32 @@ public class Camera : MonoBehaviour
     public float sens;
     public GameObject empty;
 
-
+    public float t;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButton(1))
         {
+            if (camRot.x <= 8 || camRot.x >= 8)
+            {
+                camRot.x += -Input.GetAxis("Mouse Y");
+            }
             camRot.y += Input.GetAxis("Mouse X");
-            camRot.x += -Input.GetAxis("Mouse Y");
+            
             cam.transform.eulerAngles = (Vector2)camRot * sens; /// Rotate the camera from world space * by camera sensitivity
         }
 
-        if (transform.rotation.x > 30)
+        if (camRot.x > 8)
         {
-            transform.eulerAngles = new Vector3(30, transform.rotation.y, transform.rotation.z);
+            print("above");
+            camRot.x = 8f;
         }
-        else if (transform.rotation.x < -30)
+        else if (camRot.x < -11)
         {
-            transform.eulerAngles = new Vector3(-30, transform.rotation.y, transform.rotation.z);
-        }
+            print("below");
+            camRot.x = -11f;
 
+        }
     }
 }
