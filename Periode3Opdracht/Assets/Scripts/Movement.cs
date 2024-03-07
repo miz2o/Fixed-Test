@@ -1,10 +1,12 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
-
+////transform.eulerAngles = new Vector3(transform.rotation.x, empty.transform.eulerAngles.y, transform.rotation.x);
 public class Movement : MonoBehaviour
 {
 
@@ -16,42 +18,46 @@ public class Movement : MonoBehaviour
     public float jP;
     public bool isgrounded;
     public bool cameraLocked;
+    public float raycastsize;
+    public Vector3 rayto;
 
 
     // Update is called once per frame
     void Update()
     {
-        
+
+
+
         float hor = Input.GetAxis("Horizontal");
         float vert = Input.GetAxis("Vertical");
+
         if (cameraLocked == false)
         {
-
             if (vert > 0)
             {
-                ////transform.eulerAngles = new Vector3(transform.rotation.x, empty.transform.eulerAngles.y, transform.rotation.x);
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.rotation.x, empty.transform.eulerAngles.y, transform.rotation.x), rotateSpeed * Time.deltaTime);
-                transform.position += transform.forward * vert * speed * Time.deltaTime;
-
+                Move(vert);
 
             }
+
+
+
             if (vert < 0)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.rotation.x, empty.transform.eulerAngles.y + 180f, transform.rotation.x), rotateSpeed * Time.deltaTime);
                 transform.position += transform.forward * -vert * speed * Time.deltaTime;
-
-
             }
+
             if (hor > 0)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.rotation.x, empty.transform.eulerAngles.y + 90f, transform.rotation.x), rotateSpeed * Time.deltaTime);
-                transform.position += transform.forward * hor * speed * Time.deltaTime;
+                Move(hor);
 
             }
             if (hor < 0)
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.rotation.x, empty.transform.eulerAngles.y + -90f, transform.rotation.x), rotateSpeed * Time.deltaTime);
-                transform.position += transform.forward * -hor * speed * Time.deltaTime;
+                Move(-hor);
 
             }
 
@@ -59,47 +65,46 @@ public class Movement : MonoBehaviour
         else
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(transform.rotation.x, empty.transform.eulerAngles.y, transform.rotation.x), rotateSpeed * Time.deltaTime);
-            transform.position += transform.forward * vert * speed * Time.deltaTime;
+            Move(vert);
 
         }
 
 
 
-
-
-
         if (Input.GetButtonDown("Jump") && isgrounded == true)
-            {
-                isgrounded = false;
+        {
+            isgrounded = false;
 
-                print("jump");
-                transform.GetComponent<Rigidbody>().AddForce(transform.up * jP, ForceMode.Impulse);
+            print("jump");
+            transform.GetComponent<Rigidbody>().AddForce(transform.up * jP, ForceMode.Impulse);
 
-            }
-            else if (Input.GetButtonUp("Jump"))
-            {
-                isgrounded = false;
-            }
+        }
+        else if (Input.GetButtonUp("Jump"))
+        {
+            isgrounded = false;
+        }
 
-
-
-
-
-
-        ///// transform.position += transform.forward * vert * speed * Time.deltaTime; /// move the players character foward so it moves the same way the player is facing
-        /// transform.position += transform.forward * hor * speed * Time.deltaTime;
-        //// transform.position += transform.right * hor * speed * Time.deltaTime;
 
         empty.transform.position = new Vector3(transform.position.x, transform.position.y + 1.49f, transform.position.z);
 
-    
+
 
 
 
     }
+
     void OnCollisionStay()
     {
-        print("colliisinostay");
         isgrounded = true;
+    }
+
+    void Move(float v)
+    {
+        RaycastHit hit;
+        if (!Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, raycastsize))
+        {
+            transform.position += transform.forward * v * speed * Time.deltaTime;
+        }
+       
     }
 }
