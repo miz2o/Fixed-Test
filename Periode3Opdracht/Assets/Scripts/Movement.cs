@@ -71,7 +71,7 @@ public class Movement : MonoBehaviour
 
 
 
-        if (Input.GetButtonDown("Jump") && isgrounded == true)
+        if (Input.GetButtonDown("Jump") && isgrounded == true) //jummp
         {
             isgrounded = false;
 
@@ -79,10 +79,7 @@ public class Movement : MonoBehaviour
             transform.GetComponent<Rigidbody>().AddForce(transform.up * jP, ForceMode.Impulse);
 
         }
-        else if (Input.GetButtonUp("Jump"))
-        {
-            isgrounded = false;
-        }
+
 
 
         empty.transform.position = new Vector3(transform.position.x, transform.position.y + 1.49f, transform.position.z);
