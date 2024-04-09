@@ -3,7 +3,22 @@ guid: f8d533302e5590a4fae4e1aa712fa960
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Base model TEX
+    second: {fileID: 2100000, guid: 3977ea1c031c96949a36f790c5172ca4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Clothes_Tex
+    second: {fileID: 2100000, guid: 52c20f0542ff2fd4fa139b7860189062, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 41fa0dbb957d0564483dabe7e0a714cf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
