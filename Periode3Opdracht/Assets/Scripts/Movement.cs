@@ -20,6 +20,7 @@ public class Movement : MonoBehaviour
     public bool cameraLocked;
     public float raycastsize;
     public Vector3 rayto;
+    public float camheight;
 
 
     // Update is called once per frame
@@ -82,7 +83,7 @@ public class Movement : MonoBehaviour
 
 
 
-        empty.transform.position = new Vector3(transform.position.x, transform.position.y + 1.49f, transform.position.z);
+        empty.transform.position = new Vector3(transform.position.x, transform.position.y + camheight, transform.position.z);
 
 
 
