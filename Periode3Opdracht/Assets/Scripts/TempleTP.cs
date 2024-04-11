@@ -7,14 +7,26 @@ using UnityEngine.SceneManagement;
 public class TempleTP : MonoBehaviour
 {
     public GameObject plr;
+    public bool starshardcollected;
+    public bool spaceRift;
+    public bool peridot;
 
 
     void OnCollisionEnter(Collision Otherobject)
     {
-        print("col");
+       
         if (Otherobject.gameObject.tag == "desertCollider")
         {
-           SceneManager.LoadScene("DesertTemple_Inside");
+            if (!starshardcollected)
+            {
+                SceneManager.LoadScene("DesertTemple_Inside");
+            }
+           
+        }
+        if (Otherobject.gameObject.tag == "starShard")
+        {
+            starshardcollected = true;
+            SceneManager.LoadScene("Mainscene");
         }
     }
 }
