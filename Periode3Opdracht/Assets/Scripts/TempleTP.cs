@@ -19,14 +19,26 @@ public class TempleTP : MonoBehaviour
         {
             if (!starshardcollected)
             {
+                starshardcollected = true;
                 SceneManager.LoadScene("DesertTemple_Inside");
             }
-           
+
         }
         if (Otherobject.gameObject.tag == "starShard")
         {
-            starshardcollected = true;
+
             SceneManager.LoadScene("Mainscene");
+        }
+
+
+        if (Otherobject.gameObject.tag == "snowCollider")
+        {
+            if (!peridot)
+            {
+                peridot = true;
+                SceneManager.LoadScene("SnowTemple");
+            }
+
         }
     }
 }
