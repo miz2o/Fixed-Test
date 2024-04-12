@@ -33,9 +33,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: rig.001|Running.rig.001Action
-      takeName: rig.001|Running.rig.001Action
-      internalID: 8840550771179626734
+      name: rig.001|Running
+      takeName: rig.001|Running
+      internalID: -4347597335998029849
       firstFrame: 0
       lastFrame: 20
       wrapMode: 0
@@ -45,7 +45,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
