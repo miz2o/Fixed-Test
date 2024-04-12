@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DesertTemple_Inside.unity
     guid: cd3e9863936ea4549a7bc8f8306424ad
+  - enabled: 1
+    path: Assets/Scenes/SnowTemple.unity
+    guid: 3f2ccef54fa38fd45a93d783eaa5d8b0
+  - enabled: 1
+    path: Assets/Scenes/ForestTemple.unity
+    guid: 7b8bf0ab4d11a554685d551d7fa51a8f
+  - enabled: 1
+    path: Assets/Scenes/winScene.unity
+    guid: 86dba8e7037589b46ad9f923a78c0e27
   m_configObjects: {}

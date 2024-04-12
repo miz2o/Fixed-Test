@@ -52,11 +52,11 @@ public class TempleTP : MonoBehaviour
 
         }
 
-        if (Otherobject.gameObject.tag == "Win")
+        if (Otherobject.gameObject.tag == "Finish")
         {
             if (starshardcollected && peridot && spaceRift)
             {
-                SceneManager.LoadScene("ForestTemple");
+                SceneManager.LoadScene("winScene");
             }
 
         }
