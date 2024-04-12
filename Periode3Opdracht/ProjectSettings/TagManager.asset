@@ -8,6 +8,7 @@ TagManager:
   - desertCollider
   - starShard
   - snowCollider
+  - forestCollider
   layers:
   - Default
   - TransparentFX

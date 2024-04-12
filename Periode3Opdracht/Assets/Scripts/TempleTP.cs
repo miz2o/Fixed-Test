@@ -14,7 +14,7 @@ public class TempleTP : MonoBehaviour
 
     void OnCollisionEnter(Collision Otherobject)
     {
-       
+
         if (Otherobject.gameObject.tag == "desertCollider")
         {
             if (!starshardcollected)
@@ -37,6 +37,26 @@ public class TempleTP : MonoBehaviour
             {
                 peridot = true;
                 SceneManager.LoadScene("SnowTemple");
+            }
+
+        }
+
+
+        if (Otherobject.gameObject.tag == "forestCollider")
+        {
+            if (!spaceRift)
+            {
+                spaceRift = true;
+                SceneManager.LoadScene("ForestTemple");
+            }
+
+        }
+
+        if (Otherobject.gameObject.tag == "Win")
+        {
+            if (starshardcollected && peridot && spaceRift)
+            {
+                SceneManager.LoadScene("ForestTemple");
             }
 
         }
