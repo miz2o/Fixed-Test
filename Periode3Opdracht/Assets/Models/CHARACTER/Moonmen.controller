@@ -10,8 +10,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -5939140901753716815}
-    m_Position: {x: 30, y: 260, z: 0}
+    m_State: {fileID: -6144132059138478044}
+    m_Position: {x: 20, y: 240, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -21,15 +21,15 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 40, y: 130, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -5939140901753716815}
---- !u!1102 &-5939140901753716815
+  m_DefaultState: {fileID: -6144132059138478044}
+--- !u!1102 &-6144132059138478044
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: rig_001|Running
+  m_Name: rig_001|Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -42,8 +42,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -4347597335998029849, guid: 2b2ff40bd39541741a39566b50ed2738,
-    type: 3}
+  m_Motion: {fileID: 236967887387751247, guid: cfd25da4a425ffa469e86b813dfd7b45, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
